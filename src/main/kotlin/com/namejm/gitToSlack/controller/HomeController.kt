@@ -63,7 +63,7 @@ class HomeController {
         val time = convertLongToTime(eventPayloadHeadCommit[0]["timestamp"].toString().toLong())
         val commitMessage = eventPayloadHeadCommit[0]["commit_message"].toString()
 
-        val payload = "{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"${repoName}에 ${type} 이벤트가 발생하였습니다.\",\"emoji\":true}},{\"type\":\"context\",\"elements\":[{\"type\":\"mrkdwn\",\"text\":\"*branch* ${branch}\"},{\"type\":\"mrkdwn\",\"text\":\"*committer* ${committer}\"},{\"type\":\"mrkdwn\",\"text\":\"*time* ${time}\"},{\"type\":\"mrkdwn\",\"text\":\"*commit message* ${commitMessage}\"}]},{\"type\":\"divider\"}]}"
+        val payload = "{\"blocks\":[{\"type\":\"header\",\"text\":{\"type\":\"plain_text\",\"text\":\"${repoName}에 ${type} 이벤트가 발생하였습니다.\",\"emoji\":true}},{\"type\":\"context\",\"elements\":[{\"type\":\"mrkdwn\",\"text\":\"*branch* ${branch}\"},{\"type\":\"mrkdwn\",\"text\":\"*committer* ${committer}\"},{\"type\":\"mrkdwn\",\"text\":\"*time* ${time}\"},{\"type\":\"mrkdwn\",\"text\":\"*message* ${commitMessage}\"}]},{\"type\":\"divider\"}]}"
 
         val result  = HashMap<String, Any>()
         val factory = HttpComponentsClientHttpRequestFactory()
