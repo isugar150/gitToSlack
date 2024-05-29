@@ -17,4 +17,5 @@ server:
       force: true
 
 app:
-  secret: {secretKey}
+  slack:
+    url: 'test'
